@@ -7,14 +7,9 @@ class CrudRepository {
         this.model = model;
     }
 
-    async create(data) {
-        try{
+    async create(data) {    
             const response = await this.model.create(data) // Here .create is act as a Insert sql query for Inserting values
-            return response; 
-        } catch(error){
-            Logger.error('something went wrong in the Crud Repo : create');
-            throw error;
-        }
+            return response;        
     }
 
     async destroy(data) {
